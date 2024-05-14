@@ -1,0 +1,93 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="servidores-markdown"
+                  title=""
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Descargar Apache HTTP Server:" duration="0">
+        <p>Ve al sitio web oficial de Apache: <a href="https://httpd.apache.org/download.cgi" target="_blank">httpd.apache.org</a> y descarga la última versión estable de Apache para Windows.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Instalación:" duration="0">
+        <p>Una vez que hayas descargado el archivo de instalación, ábrelo y sigue las instrucciones del instalador. Durante el proceso de instalación, se te pedirá que selecciones componentes y opciones de configuración. Asegúrate de seleccionar las opciones que se ajusten a tus necesidades.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Configuración:" duration="0">
+        <p>Después de instalar Apache, es posible que desees configurar algunas opciones. El archivo de configuración principal de Apache es httpd.conf, que generalmente se encuentra en la carpeta conf dentro del directorio de instalación de Apache. Aquí puedes modificar opciones como los puertos en los que Apache escucha, los directorios de documentos, la configuración de seguridad, entre otras.</p>
+<h2 is-upgraded>Cambiar el puerto:</h2>
+<p>Por defecto, Apache escucha en el puerto 80. Si este puerto está siendo utilizado por otro servicio en tu sistema, puedes cambiarlo a un puerto diferente. Por ejemplo, para cambiarlo al puerto 8080, puedes buscar la línea que dice:</p>
+<pre><code>Listen 80
+</code></pre>
+<p>Cambiar por</p>
+<pre><code>Listen 8080
+</code></pre>
+<h2 is-upgraded>Configurar los directorios de documentos</h2>
+<p>Puedes especificar la ubicación de los archivos que Apache debe servir. Por ejemplo, si deseas cambiar el directorio raíz de documentos de htdocs a C:/mi_sitio_web, puedes buscar la línea que dice:</p>
+<pre><code>DocumentRoot &#34;ruta/a/htdocs&#34;
+</code></pre>
+<p>y cambiarla a:</p>
+<pre><code>DocumentRoot &#34;C:/mi_sitio_web&#34;
+</code></pre>
+<p>También debes cambiar la directiva  para que apunte al nuevo directorio:</p>
+<pre><code>&lt;Directory &#34;C:/mi_sitio_web&#34;&gt;
+</code></pre>
+<h2 is-upgraded>Configuración de seguridad:</h2>
+<p>Puedes aplicar reglas de seguridad básicas, como restringir el acceso a ciertas carpetas o habilitar/deshabilitar módulos de Apache según sea necesario. Por ejemplo, para permitir el acceso solo desde la red local, puedes agregar lo siguiente:</p>
+<pre><code>&lt;Directory &#34;C:/mi_sitio_web&#34;&gt;
+    Require local
+&lt;/Directory&gt;
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Inicio del Servicio:" duration="0">
+        <p>Una vez que hayas configurado Apache según tus preferencias, puedes iniciar el servicio. Puedes hacerlo desde el Panel de Control de Windows, buscando &#34;Servicios&#34;, o ejecutando services.msc. Busca &#34;Apache HTTP Server&#34; en la lista de servicios, haz clic derecho y selecciona &#34;Iniciar&#34;.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Comprobación:" duration="0">
+        <p>Para verificar que Apache se haya instalado y esté funcionando correctamente, abre un navegador web y escribe <a href="http://localhost" target="_blank">localhost</a> en la barra de direcciones. Deberías ver la página de inicio predeterminada de Apache o alguna otra página que hayas configurado como la página de inicio.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
